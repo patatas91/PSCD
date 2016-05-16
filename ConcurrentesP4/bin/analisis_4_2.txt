@@ -1,0 +1,8 @@
+La equidad es la garantia de que todo proceso tiene la posibilidad de evolucionar, independientemente
+de lo que hagan los restantes procesos. El programa garantiza la equidad ya que aunque se bloqueen
+los procesos en su wait() los reaunudamos con notifyAll(), que hace que todos los procesos wait()
+reaunuden su ejecucion.
+
+No tenemos tampoco bloqueos en el programa, ya que cuando un usuario alquila o devuelve el material 
+del club hacemos un notifyAll(), haciendo que si algun proceso se bloquea se desbloquee cuando algo
+del material haya cambiado.

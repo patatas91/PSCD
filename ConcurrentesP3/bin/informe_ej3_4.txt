@@ -1,0 +1,69 @@
+EJERCICIO 1 - BLOQUEO A NIVEL DE BASE DE DATOS
+----------------------------------------------
+Para este tipo de bloqueo bastaria con un unico semaforo que coordine
+el acceso a las tablas de la base de datos, de tal manera que cada proceso
+que intente modificar un dato debera esperar a que el semaforo le indique
+que puede acceder.
+
+Resultados:
+1- 108 milisegundos
+2- 102 milisegundos
+3- 105 milisegundos
+4- 102 milisegundos
+5- 98 milisegundos
+
+Ventajas:
+Al tener solo un semaforo el acceso es mas rapido ya que solo necesitamos verificar
+un semaforo para modificar la base de datos.
+
+Desventajas:
+Si queremos modificar valores de distintas tablas tendremos que esperar aunque las
+modificaciones no sean en la misma tabla.
+
+EJERCICIO 2 - BLOQUEO A NIVEL DE TABLA DE LA BASE DE DATOS
+----------------------------------------------------------
+Para este tipo de bloqueo necesitamos 3 semaforos, cada uno de ellos se encargara de
+coordinar el acceso a cada una de las tablas de la base de datos. Por lo tanto cada
+proceso que intente modificar una tabla debera esperar a que su semaforo le permita
+el acceso.
+
+Resultados:
+1- 84 milisegundos
+2- 73 milisegundos
+3- 84 milisegundos
+4- 71 milisegundos
+5- 81 milisegundos
+
+Ventajas:
+Podemos modificar diferentes tablas a la vez ya que tenemos un semaforo para cada tabla.
+
+Desventajas:
+Si estamos modificando una sola tabla tendremos que esperar a que terminen los demas accesos,
+ya que tendremos instrucciones de chequeo de semaforos innecesarias.
+
+EJERCICIO 3 - BLOQUEO A NIVEL DE DATOS DE PERSONA
+-------------------------------------------------
+Para este tipo de bloqueo necesitamos un semaforo por cada persona que modifiquemos, por lo
+que cuando un proceso intente modificar los datos de una persona debera esperar al semaforo
+de esa persona.
+
+Resultados:
+1- 72 milisegundos
+2- 69 milisegundos
+3- 68 milisegundos
+4- 70 milisegundos
+5- 69 milisegundos
+
+Ventajas:
+Mas rapidas las modificaciones de registros
+
+Desventajas:
+Coste mayor al tener que acceder a una tabla hash, ya que debemos realizar la operacion de
+acceso en la tabla hash para obtener la clave y la busqueda en la tabla.
+
+
+
+
+
+
+
